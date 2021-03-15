@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-framework="vue">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Chat Quiz</title>
+  <meta name="description" content="A simple chat app that includes features to run quizzes where answers are entered in the chat.">
+  <meta property="og:title" content="Le Chat Quiz" />
+  <meta property="og:description" content="A simple chat app that includes features to run quizzes where answers are entered in the chat." />
+  <meta property="og:url" content="http://chatquizapp.web.app" />
+  <meta property="og:image" content="http://chatquizapp.web.app/leChatLogo.png" />
+  <meta property="og:locale" content="en_GB" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="app.css?1234" />
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <style>[v-cloak] { display: none; }</style>
+
+  <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-database.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-messaging.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script>
+ 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/2.2.2/vuefire.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js"></script>
+  <script src="uikit-icons-linear.min.js"></script>
+  
+
+  </head>
+  <body>
+    <div id="app">
+    
+      <!-- app -->
+      <auth v-if="!auth.uid"></auth>
+      <load v-else-if="!app.inRoom" v-bind:user-id="auth.uid"></load>
+      <in-room v-else-if="app.inRoom" v-bind:room-code="app.roomcode" v-bind:user-id="auth.uid"></in-room>
+    
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

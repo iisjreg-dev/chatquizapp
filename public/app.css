@@ -1,0 +1,89 @@
+@media screen and (min-width: 750px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 30% auto 20%;
+    grid-template-rows: 8% 5% auto 5%;
+    gap: 0px 0px;
+    grid-template-areas: "header header header" "left-header centre-content right-header" "left-content centre-content right-content" "left-footer centre-footer right-content";
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 8% 42% auto 5% 5%;
+    gap: 1px 1px;
+    grid-template-areas: "header"  "left-content" "centre-content" "left-footer" "centre-footer";
+  }
+}
+
+.header { grid-area: header; height: 100%; background: #f8f8f8;}
+
+@media screen and (min-width: 750px) {
+  .left-header { grid-area: left-header; height: 100%; }
+}
+@media screen and (max-width: 750px) {
+  .left-header { grid-area: left-header; display: none; }
+}
+
+.left-content { grid-area: left-content; overflow: auto; height: 100%; }
+
+.left-footer { grid-area: left-footer; height: 100%; }
+
+.centre-content { grid-area: centre-content; overflow: auto; height: 100%; }
+
+.centre-footer { grid-area: centre-footer; height: 100%; }
+
+@media screen and (min-width: 750px) {
+  .right-header { grid-area: right-header; height: 100%; }
+  
+  .right-content { grid-area: right-content; overflow: auto; height: 100%; }
+}
+@media screen and (max-width: 750px) {
+  .right-header { grid-area: right-header; display: none; }
+  
+  .right-content { grid-area: right-content; display: none; }
+}
+
+.new-file-preview { width: 28px; height: 28px; max-width: 28px; max-height: 28px; padding: 5px; background: #ffffff; border: 1px solid #e5e5e5; }
+
+.uk-form-success, .uk-form-success:focus {
+    color: #32d296;
+    border-color: #32d296;
+    background: #caffeb;
+}
+    
+    
+/*
+<!-- MOBILE HTML
+<div class="grid-container">
+  <div class="header"></div>
+  <div class="centre-footer"></div>
+  <div class="centre-content"></div>
+  <div class="left-content"></div>
+  <div class="left-header"></div>
+</div> -->
+*/
+
+/* MOBILE CSS
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 8% 5% auto auto 5%;
+  gap: 1px 1px;
+  grid-template-areas: "header" "left-header" "left-content" "centre-content" "centre-footer";
+}
+
+.header { grid-area: header; }
+
+.centre-footer { grid-area: centre-footer; }
+
+.centre-content { grid-area: centre-content; }
+
+.left-content { grid-area: left-content; }
+
+.left-header { grid-area: left-header; }
+
+*/
